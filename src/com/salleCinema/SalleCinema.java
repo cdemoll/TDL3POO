@@ -1,38 +1,44 @@
 package com.salleCinema;
 
+//Exercice 2
 public class SalleCinema {
     private String film;
+    private int nbPlaces;
     private int tarif;
-    private int capacite;
-    private int visiteurs;
-    private double tauxRemplissage;
-    private int chiffreAffaires;
+    private int nbPlacesVendues;
 
     public SalleCinema(String film, int capacite, int tarif) {
         this.film = film;
-        this.capacite = capacite;
+        this.nbPlaces = capacite;
         this.tarif = tarif;
     }
 
     //On choisit de mettre à jour les données en temps réels
     public void vendrePlace() {
-        visiteurs++;
-        chiffreAffaires += tarif;
-        tauxRemplissage = (visiteurs*100)/capacite;
+        nbPlaces--;
+        nbPlacesVendues++;
     }
 
-    public void tauxRemplissage() {
-        System.out.println("Taux de remplissage : " + tauxRemplissage);
+    public double tauxRemplissage() {
+        return (nbPlacesVendues*100)/nbPlaces;
     }
 
-    public void chiffreAffaires() {
-        System.out.println("Chiffre affaires : " + chiffreAffaires);
+    public double chiffreAffaires() {
+        return tarif*nbPlacesVendues;
     }
 
-    public void nbPlacesDisponibles() {
-        System.out.println("Nombre de places disponibles : " + String.valueOf(capacite-visiteurs));
+    public void estPleine() {
+        if(nbPlaces == nbPlacesVendues) {
+            System.out.println("La salle est pleine.");
+        }
+        else {
+            System.out.println("La salle n'est pas pleine.");
+        }
     }
 
+    public String nbPlacesDisponibles() {
+        return String.valueOf(nbPlaces-nbPlacesVendues);
+    }
 
     public String getFilm() {
         return film;
@@ -40,6 +46,14 @@ public class SalleCinema {
 
     public void setFilm(String film) {
         this.film = film;
+    }
+
+    public int getNbPlaces() {
+        return nbPlaces;
+    }
+
+    public void setNbPlaces(int nbPlaces) {
+        this.nbPlaces = nbPlaces;
     }
 
     public int getTarif() {
@@ -50,27 +64,22 @@ public class SalleCinema {
         this.tarif = tarif;
     }
 
-    public int getCapacite() {
-        return capacite;
+    public int getNbPlacesVendues() {
+        return nbPlacesVendues;
     }
 
-    public void setCapacite(int capacite) {
-        this.capacite = capacite;
+    public void setNbPlacesVendues(int nbPlacesVendues) {
+        this.nbPlacesVendues = nbPlacesVendues;
     }
 
-    public double getTauxRemplissage() {
-        return tauxRemplissage;
-    }
-
-    public void setTauxRemplissage(double tauxRemplissage) {
-        this.tauxRemplissage = tauxRemplissage;
-    }
-
-    public int getChiffreAffaires() {
-        return chiffreAffaires;
-    }
-
-    public void setChiffreAffaires(int chiffreAffaires) {
-        this.chiffreAffaires = chiffreAffaires;
+    @Override
+    public String toString() {
+        final StringBuffer sb = new StringBuffer("");
+        sb.append("Film projete      : ").append(getFilm());
+        sb.append("\nTarif             : ").append(getTarif());
+        sb.append("\n Nombre de places : ").append(nbPlacesDisponibles());
+        sb.append("\nTaux remplissage  : ").append(tauxRemplissage());
+        sb.append("\nChiffreAffaires   : ").append(chiffreAffaires());
+        return sb.toString();
     }
 }
