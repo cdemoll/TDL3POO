@@ -3,12 +3,12 @@ package com.calculPaye;
 public class Employe {
     private String nom;
     private int salaire; //par heure
-    private int tempsTravaillé;
+    private int tempsTravaille;
 
-    public Employe(String nom, int salaire, int tempsTravaillé) {
+    public Employe(String nom, int salaire, int tempsTravaille) {
         this.nom = nom;
         this.salaire = salaire;
-        this.tempsTravaillé = tempsTravaillé;
+        this.tempsTravaille = tempsTravaille;
     }
 
     public String getNom() {
@@ -27,12 +27,12 @@ public class Employe {
         this.salaire = salaire;
     }
 
-    public int getTempsTravaillé() {
-        return tempsTravaillé;
+    public int getTempsTravaille() {
+        return tempsTravaille;
     }
 
-    public void setTempsTravaillé(int tempsTravaillé) {
-        this.tempsTravaillé = tempsTravaillé;
+    public void setTempsTravaille(int tempsTravaille) {
+        this.tempsTravaille = tempsTravaille;
     }
 
     @Override
@@ -40,7 +40,7 @@ public class Employe {
         final StringBuffer sb = new StringBuffer("-");
         sb.append(nom);
         sb.append(", salaire horaire : ").append(getSalaire());
-        sb.append("; heures travaillés : ").append(getTempsTravaillé());
+        sb.append("; heures travaillés : ").append(getTempsTravaille());
         return sb.toString();
     }
 }
