@@ -12,14 +12,19 @@ public class EntrepriseJ {
         employes.add(new Employe("Laurent", 25, 60));
         employes.add(new Employe("Laurent", 14, 45));
 
-        for(Employe employe : employes) {
-            System.out.println(getSalaireHebdo(employe));
-        }
+            for (Employe employe : employes) {
+                if(getSalaireHebdo(employe) == 0) {
+                    System.out.println("Les conditions de travails d'un de vos employés sont inhumaines!");
+                    continue;
+                }
+                System.out.println(employe + "; Salaire hebdomadaires : " + getSalaireHebdo(employe) +
+                        ";");
+            }
     }
 
-    private double getSalaireHebdo(Employe employe) throws IllegalArgumentException {
+    private double getSalaireHebdo(Employe employe) {
         if(employe.getTempsTravaille() > 60 || employe.getSalaire() < 13) {
-            throw new IllegalArgumentException("Les conditions de travails de certains de vos employés sont inhumaines!");
+            return 0;
         }
 
         int salaireHebdo = 0;
@@ -27,14 +32,13 @@ public class EntrepriseJ {
 
         while(tmpTravaille != 0) {
             while(tmpTravaille > 40) {
-                salaireHebdo += employe.getSalaire();
+                salaireHebdo += employe.getSalaire()*1.5;
                 tmpTravaille--;
             }
             salaireHebdo += employe.getSalaire();
 
             tmpTravaille--;
         }
-
 
         return salaireHebdo;
     }

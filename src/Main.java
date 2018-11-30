@@ -46,8 +46,12 @@ public class Main {
 
         try{
             ent.main();
-        } catch(Exception e) {
-            System.err.print(e);
+        } catch(final IllegalArgumentException ae) {
+            System.err.println(ae.getMessage());
+            ae.printStackTrace();
+        } catch(final Exception e) {
+            System.err.println(e.getMessage());
+            e.printStackTrace();
         }
 
     }
