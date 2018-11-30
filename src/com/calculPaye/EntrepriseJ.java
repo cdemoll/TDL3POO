@@ -27,7 +27,7 @@ public class EntrepriseJ {
             return 0;
         }
 
-        int salaireHebdo = 0;
+        double salaireHebdo = 0;
         int tmpTravaille =  employe.getTempsTravaille();
 
         while(tmpTravaille != 0) {
