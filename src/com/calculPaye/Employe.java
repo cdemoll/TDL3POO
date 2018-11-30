@@ -37,7 +37,7 @@ public class Employe {
 
     @Override
     public String toString() {
-        final StringBuffer sb = new StringBuffer("-");
+        final StringBuilder sb = new StringBuilder("-");
         sb.append(nom);
         sb.append(", salaire horaire : ").append(getSalaire());
         sb.append("; heures travaillés : ").append(getTempsTravaille());

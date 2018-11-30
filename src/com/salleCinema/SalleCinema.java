@@ -20,7 +20,7 @@ public class SalleCinema {
     }
 
     public double tauxRemplissage() {
-        return (nbPlacesVendues*100)/nbPlaces;
+        return (double)(nbPlacesVendues*100)/nbPlaces;
     }
 
     public double chiffreAffaires() {
@@ -74,7 +74,7 @@ public class SalleCinema {
 
     @Override
     public String toString() {
-        final StringBuffer sb = new StringBuffer("");
+        final StringBuilder sb = new StringBuilder();
         sb.append("Film projete      : ").append(getFilm());
         sb.append("\nTarif             : ").append(getTarif());
         sb.append("\n Nombre de places : ").append(nbPlacesDisponibles());

@@ -2,7 +2,6 @@ import com.gravite.Bonjour;
 import com.gravite.CalculateurChute;
 import com.salleCinema.SalleCinema;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class Main {
@@ -10,7 +9,7 @@ public class Main {
     public static void main(String[] args) {
         //Exercice 1.1
         System.out.println("Exercice 1.1 : Bonjour <user> !\n");
-        ArrayList<String> names = new ArrayList<String>();
+        ArrayList<String> names = new ArrayList<>();
         names.add("Pascal");
         names.add("Michelle");
         names.add("Jérôme");
