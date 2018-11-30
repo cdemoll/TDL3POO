@@ -2,10 +2,10 @@ package com.calculPaye;
 
 public class Employe {
     private String nom;
-    private int salaire; //par heure
+    private double salaire; //par heure
     private int tempsTravaille;
 
-    public Employe(String nom, int salaire, int tempsTravaille) {
+    public Employe(String nom, double salaire, int tempsTravaille) {
         this.nom = nom;
         this.salaire = salaire;
         this.tempsTravaille = tempsTravaille;
@@ -19,11 +19,11 @@ public class Employe {
         this.nom = nom;
     }
 
-    public int getSalaire() {
+    public double getSalaire() {
         return salaire;
     }
 
-    public void setSalaire(int salaire) {
+    public void setSalaire(double salaire) {
         this.salaire = salaire;
     }
 

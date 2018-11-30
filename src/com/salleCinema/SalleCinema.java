@@ -75,11 +75,11 @@ public class SalleCinema {
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder();
-        sb.append("Film projete      : ").append(getFilm());
-        sb.append("\nTarif             : ").append(getTarif());
-        sb.append("\n Nombre de places : ").append(nbPlacesDisponibles());
-        sb.append("\nTaux remplissage  : ").append(tauxRemplissage());
-        sb.append("\nChiffreAffaires   : ").append(chiffreAffaires());
+        sb.append("Film projete     : ").append(getFilm());
+        sb.append("\nTarif            : ").append(getTarif());
+        sb.append("\nNombre de places : ").append(nbPlacesDisponibles());
+        sb.append("\nTaux remplissage : ").append(tauxRemplissage());
+        sb.append("\nChiffreAffaires  : ").append(chiffreAffaires());
         return sb.toString();
     }
 }

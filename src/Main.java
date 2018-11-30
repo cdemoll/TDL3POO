@@ -1,3 +1,4 @@
+import com.calculPaye.EntrepriseJ;
 import com.gravite.Bonjour;
 import com.gravite.CalculateurChute;
 import com.salleCinema.SalleCinema;
@@ -39,6 +40,15 @@ public class Main {
         System.out.println("\n\n");
 
         //Exercice 3
+        System.out.println("Exercice 3 : Calcul de paye\n");
+
+        EntrepriseJ ent = new EntrepriseJ();
+
+        try{
+            ent.main();
+        } catch(Exception e) {
+            System.err.print(e);
+        }
 
     }
 }
